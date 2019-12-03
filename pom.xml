@@ -6,6 +6,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>chat_application</module>
+        <module>chat_socket</module>
+        <module>chat_entity</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

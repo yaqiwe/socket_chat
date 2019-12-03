@@ -1,4 +1,4 @@
-package com.yaqiwe.socket_chat.config;
+package com.yaqiwe.socket_chat.socket;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
