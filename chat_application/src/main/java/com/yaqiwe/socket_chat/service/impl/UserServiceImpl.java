@@ -4,6 +4,7 @@ import com.yaqiwe.socket_chat.dto.socketDto;
 import com.yaqiwe.socket_chat.dto.tokenDto;
 import com.yaqiwe.socket_chat.entity.user;
 import com.yaqiwe.socket_chat.enums.exceEnum;
+import com.yaqiwe.socket_chat.enums.routingEnum;
 import com.yaqiwe.socket_chat.exception.socketException;
 import com.yaqiwe.socket_chat.repository.userRepository;
 import com.yaqiwe.socket_chat.service.senMessageService;
@@ -68,6 +69,7 @@ public class UserServiceImpl implements userService {
         Map<String ,Object> map=new HashMap<>();
         map.put("token",token);
         map.put("user",dto);
+        map.put("type", routingEnum.USER_LONIN_TYPE.getCode());
         senMessageS.senMessage(session,ResoultUtil.success(map));
     }
 

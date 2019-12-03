@@ -11,6 +11,7 @@ import lombok.Getter;
 public enum routingEnum {
     PRIVATE_CHAT(10001,"私聊"),
     PUBLIC_CHAT(10002,"公共聊天室"),
+    USER_LONIN_TYPE(10000,"用户登录"),
 
     ;
     private Integer code;
