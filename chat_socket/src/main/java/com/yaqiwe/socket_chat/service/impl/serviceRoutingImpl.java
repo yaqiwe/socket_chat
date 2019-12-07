@@ -13,6 +13,7 @@ import com.yaqiwe.socket_chat.service.serviceRouting;
 import com.yaqiwe.socket_chat.util.jwtToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
 import java.util.concurrent.CopyOnWriteArraySet;
 
@@ -47,4 +48,6 @@ public class serviceRoutingImpl implements serviceRouting {
             throw new socketException(exceEnum.PRIVATE_NULL);
         }
     }
+
+
 }

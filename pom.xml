@@ -3,26 +3,30 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <packaging>pom</packaging>
     <modules>
         <module>chat_application</module>
         <module>chat_socket</module>
         <module>chat_entity</module>
+        <module>chat_conroller</module>
     </modules>
+
+    <packaging>pom</packaging>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.2.1.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
     <groupId>com.yaqiwe</groupId>
     <artifactId>socket_chat</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>${product.version}</version>
     <name>socket_chat</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
         <java.version>1.8</java.version>
+        <product.version>0.0.2-SNAPSHOT</product.version>
     </properties>
 
 

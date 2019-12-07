@@ -13,6 +13,7 @@ import java.util.concurrent.CopyOnWriteArraySet;
  * @date ：Created in 2019/11/27 13:52
  * @description：用户登录注册等操作
  */
+@Validated
 public interface userService {
 
     /**
@@ -23,7 +24,9 @@ public interface userService {
      * @param session
      * @return
      */
-    void logIn(String userName, String passWord, CopyOnWriteArraySet<socketDto> userSet, Session session);
+    void logIn(@NotBlank(message = "用户名不能为空") String userName,
+               @NotBlank(message = "密码不能为空") String passWord,
+               CopyOnWriteArraySet<socketDto> userSet, Session session);
 
     /**
      * 获取该用户加入的群组列表
@@ -31,4 +34,5 @@ public interface userService {
      * @return
      */
     List<Integer> getGroupList(String userName);
+
 }

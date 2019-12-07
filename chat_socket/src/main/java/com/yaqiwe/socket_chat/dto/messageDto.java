@@ -1,5 +1,6 @@
 package com.yaqiwe.socket_chat.dto;
 
+import com.yaqiwe.socket_chat.groups.privateChat;
 import lombok.Data;
 import org.springframework.validation.annotation.Validated;
 
@@ -19,7 +20,7 @@ public class messageDto {
 
     private Integer userId;     //消息发送者的Id
 
-    @NotNull(message = "消息接收者ID不能为空")
+    @NotNull(message = "消息接收者ID不能为空",groups = privateChat.class)
     private Integer receive;        //消息接收者的ID 或群组ID
 
     private String token;       //登录状态码

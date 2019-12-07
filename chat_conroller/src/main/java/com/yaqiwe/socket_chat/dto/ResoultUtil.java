@@ -1,7 +1,7 @@
-package com.yaqiwe.socket_chat.util;
+package com.yaqiwe.socket_chat.dto;
 
-import com.yaqiwe.socket_chat.enums.exceEnum;
-import com.yaqiwe.socket_chat.vo.Resoult;
+
+import com.yaqiwe.socket_chat.enums.contrEnum;
 
 /**
  * @author ：yaqiwe
@@ -31,7 +31,7 @@ public class ResoultUtil {
         return resoult;
     }
 
-    public static Resoult error(exceEnum emuns){
+    public static Resoult error(contrEnum emuns){
         return error(emuns.getCode(),emuns.getMsg());
     }
 }

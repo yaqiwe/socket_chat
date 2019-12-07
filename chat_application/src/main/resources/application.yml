@@ -13,4 +13,9 @@ spring:
   #\u8FD4\u56DE\u7684\u65F6\u95F4\u683C\u5F0F\u548C\u65F6\u533A
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
-    time-zone: GMT+8
+    time-zone: GMT+8a
+logging:
+    level:
+      root: warn
+    file:
+      path: "./log/"

@@ -5,8 +5,9 @@
     <parent>
         <artifactId>socket_chat</artifactId>
         <groupId>com.yaqiwe</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>${product.version}</version>
     </parent>
+
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>application</artifactId>
@@ -16,15 +17,22 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
         </dependency>
 
         <!--socket模块-->
         <dependency>
             <groupId>com.yaqiwe</groupId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${product.version}</version>
             <artifactId>socket</artifactId>
         </dependency>
+
+        <!--controller模块-->
+        <dependency>
+            <groupId>com.yaqiwe</groupId>
+            <version>${product.version}</version>
+            <artifactId>conroller</artifactId>
+        </dependency>
+
 
     </dependencies>
 

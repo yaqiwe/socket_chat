@@ -2,8 +2,11 @@ package com.yaqiwe.socket_chat.service;
 
 import com.yaqiwe.socket_chat.dto.messageDto;
 import com.yaqiwe.socket_chat.dto.socketDto;
+import com.yaqiwe.socket_chat.groups.privateChat;
+import com.yaqiwe.socket_chat.vo.Resoult;
 import org.springframework.validation.annotation.Validated;
 
+import javax.validation.Valid;
 import javax.websocket.Session;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArraySet;
@@ -18,7 +21,8 @@ public interface senMessageService {
     /**
      * 单对单私聊
      */
-    void privateChat(@Validated messageDto dto, CopyOnWriteArraySet<socketDto> userSet);
+    @Validated(privateChat.class)
+    void privateChat(@Valid messageDto dto, CopyOnWriteArraySet<socketDto> userSet);
 
     /**
      * 群聊，单对多聊天
@@ -32,12 +36,13 @@ public interface senMessageService {
      * @param dto
      * @param userSet
      */
-    void publicChat(messageDto dto, CopyOnWriteArraySet<socketDto> userSet) ;
+    @Validated
+    void publicChat(@Valid messageDto dto, CopyOnWriteArraySet<socketDto> userSet) ;
 
     /**
      * 发送消息
      * @param session
      * @param message
      */
-    void senMessage(Session session, String message);
+    void senMessage(Session session, Resoult message);
 }

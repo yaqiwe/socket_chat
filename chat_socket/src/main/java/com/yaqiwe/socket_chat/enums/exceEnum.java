@@ -9,9 +9,9 @@ import lombok.Getter;
  */
 @Getter
 public enum exceEnum{
-    TOKEN_EXPIRED(4001,"token过期"),
-    TOKEN_INVALID(4002,"token无效"),
-    TOKEN_ERROR(4003,"token解析失败"),
+    TOKEN_EXPIRED(4001,"登录已过期"),
+    TOKEN_INVALID(4002,"未登录"),
+    TOKEN_ERROR(4003,"登录信息解析失败"),
     USER_LONIN_ERROR(4004,"用户名或密码错误"),
 
     UNKNOWN_ERROR(500,"未知错误"),
