@@ -18,6 +18,7 @@ public enum exceEnum{
     PRIVATE_ERROR(501,"数据格式错误"),
     PRIVATE_NULL(502,"请求的服务不存在"),
     PARAMETER_ERROR(503,"参数校验错误"),
+    PARAMETER_TYPE_NULL(504,"服务类型不能为空"),
 
     USER_OFFLINE(5001,"用户离线"),
     REPEAT_LANDING(5002,"账号在其他地点登录"),

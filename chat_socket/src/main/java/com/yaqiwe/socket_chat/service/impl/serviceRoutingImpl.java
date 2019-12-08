@@ -37,6 +37,9 @@ public class serviceRoutingImpl implements serviceRouting {
             throw new socketException(exceEnum.PRIVATE_ERROR);
         }
         tokenDto token = jwtToken.pareJwt(dto.getToken());
+        if(dto.getType()==null){
+            throw new socketException(exceEnum.PARAMETER_TYPE_NULL);
+        }
         dto.setUserName(token.getUserName());
         dto.setUserId(token.getUserId());
 
