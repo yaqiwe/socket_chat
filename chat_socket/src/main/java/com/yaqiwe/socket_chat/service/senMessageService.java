@@ -22,7 +22,7 @@ public interface senMessageService {
      * 单对单私聊
      */
     @Validated(privateChat.class)
-    void privateChat(@Valid messageDto dto, CopyOnWriteArraySet<socketDto> userSet);
+    void privateChat(@Valid messageDto dto, CopyOnWriteArraySet<socketDto> userSet,Session session);
 
     /**
      * 群聊，单对多聊天

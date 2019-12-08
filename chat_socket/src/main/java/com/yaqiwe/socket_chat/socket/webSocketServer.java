@@ -88,7 +88,7 @@ public class webSocketServer {
     @OnMessage
     public void onMessage(String message) {
         //接收到消息后执行路由方法
-        routing.routing(message, userSet, groupSet);
+        routing.routing(message, userSet, groupSet,session);
     }
 
     @OnError

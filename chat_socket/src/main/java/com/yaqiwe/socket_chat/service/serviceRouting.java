@@ -3,6 +3,7 @@ package com.yaqiwe.socket_chat.service;
 import com.yaqiwe.socket_chat.dto.groupChat;
 import com.yaqiwe.socket_chat.dto.socketDto;
 
+import javax.websocket.Session;
 import java.util.concurrent.CopyOnWriteArraySet;
 
 /**
@@ -16,5 +17,5 @@ public interface serviceRouting {
      * 路由
      * @param message
      */
-    void routing(String message, CopyOnWriteArraySet<socketDto> userSet, CopyOnWriteArraySet<groupChat> groupSet);
+    void routing(String message, CopyOnWriteArraySet<socketDto> userSet, CopyOnWriteArraySet<groupChat> groupSet, Session session);
 }

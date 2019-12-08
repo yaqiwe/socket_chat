@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
+import javax.websocket.Session;
 import java.util.concurrent.CopyOnWriteArraySet;
 
 /**
@@ -29,7 +30,10 @@ public class serviceRoutingImpl implements serviceRouting {
     senMessageService senMessageS;
 
     @Override
-    public void routing(String message, CopyOnWriteArraySet<socketDto> userSet, CopyOnWriteArraySet<groupChat> groupSet) {
+    public void routing(String message,
+                        CopyOnWriteArraySet<socketDto> userSet,
+                        CopyOnWriteArraySet<groupChat> groupSet,
+                        Session session) {
         messageDto dto = null;
         try {
             dto = JSON.parseObject(message, messageDto.class);
@@ -44,7 +48,7 @@ public class serviceRoutingImpl implements serviceRouting {
         dto.setUserId(token.getUserId());
 
         if(dto.getType().equals(routingEnum.PRIVATE_CHAT.getCode())) {
-            senMessageS.privateChat(dto,userSet);
+            senMessageS.privateChat(dto,userSet,session);
         }else if(dto.getType().equals(routingEnum.PUBLIC_CHAT.getCode())){
             senMessageS.publicChat(dto,userSet);
         }else {

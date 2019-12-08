@@ -30,15 +30,17 @@ import java.util.concurrent.CopyOnWriteArraySet;
 public class SenMessageServiceImpl implements senMessageService {
 
     @Override
-    public void privateChat(messageDto dto, CopyOnWriteArraySet<socketDto> userSet) {
+    public void privateChat(messageDto dto, CopyOnWriteArraySet<socketDto> userSet,Session session) {
         messageVo vo = new messageVo(dto.getUserId(), dto.getUserName(), dto.getData(), dto.getType());
         for (socketDto soDto : userSet) {
             if (soDto.getId().equals(dto.getReceive())) {
                 senMessage(soDto.getSession(), ResoultUtil.success(vo));
+                senMessage(session,ResoultUtil.success("发送成功"));
                 return;
             }
         }
         //TODO 用户不在线
+        senMessage(session,ResoultUtil.error(exceEnum.USER_OFFLINE));
     }
 
     @Override
