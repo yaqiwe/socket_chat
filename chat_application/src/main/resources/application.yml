@@ -19,3 +19,7 @@ logging:
       root: warn
     file:
       path: "./log/"
+mybatis:
+  configuration:
+    #开启自动驼峰命名规则映射
+    map-underscore-to-camel-case: true

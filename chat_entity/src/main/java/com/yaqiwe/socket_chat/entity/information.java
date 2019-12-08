@@ -2,8 +2,6 @@ package com.yaqiwe.socket_chat.entity;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
 import java.sql.Timestamp;
 
 /**
@@ -12,10 +10,9 @@ import java.sql.Timestamp;
  * @description：
  */
 @Data
-@Entity
 public class information {
-    @Id
-    private String infoId;
+
+    private String infoId;      //自增主键
 
     private Integer userId;        //发送消息的用户
 

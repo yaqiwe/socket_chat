@@ -1,8 +1,8 @@
-package com.yaqiwe.socket_chat.repository;
+package com.yaqiwe.socket_chat.Mapper;
 
 import com.yaqiwe.socket_chat.entity.information;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
@@ -11,12 +11,13 @@ import java.util.List;
  * @date ：Created in 2019/11/27 16:18
  * @description：
  */
-@Repository
-public interface informationRepository extends JpaRepository<information,String> {
+@Mapper
+public interface InformationMapper {
     /**
      * 查询数据库中的未读信息
      * @param receiceId
      * @return
      */
+    @Select("select * from information wherr receive_id = #{receiceId}")
     List<information> findByReceiveId(Integer receiceId);
 }

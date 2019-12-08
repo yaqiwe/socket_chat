@@ -6,7 +6,7 @@ import com.yaqiwe.socket_chat.entity.user;
 import com.yaqiwe.socket_chat.enums.exceEnum;
 import com.yaqiwe.socket_chat.enums.routingEnum;
 import com.yaqiwe.socket_chat.exception.socketException;
-import com.yaqiwe.socket_chat.repository.userRepository;
+import com.yaqiwe.socket_chat.Mapper.userMapper;
 import com.yaqiwe.socket_chat.service.senMessageService;
 import com.yaqiwe.socket_chat.service.userService;
 import com.yaqiwe.socket_chat.util.ResoultUtil;
@@ -31,7 +31,7 @@ import java.util.concurrent.CopyOnWriteArraySet;
 public class UserServiceImpl implements userService {
 
     @Autowired
-    userRepository userR;
+    userMapper userR;
 
     @Autowired
     senMessageService senMessageS;

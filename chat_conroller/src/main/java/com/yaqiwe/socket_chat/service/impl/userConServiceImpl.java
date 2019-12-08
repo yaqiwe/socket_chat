@@ -3,7 +3,7 @@ package com.yaqiwe.socket_chat.service.impl;
 import com.yaqiwe.socket_chat.entity.user;
 import com.yaqiwe.socket_chat.enums.contrEnum;
 import com.yaqiwe.socket_chat.exception.contrException;
-import com.yaqiwe.socket_chat.repository.userRepository;
+import com.yaqiwe.socket_chat.Mapper.userMapper;
 import com.yaqiwe.socket_chat.service.userConService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 public class userConServiceImpl implements userConService {
 
     @Autowired
-    userRepository userR;
+    userMapper userR;
 
     @Override
     public void createUser(String userName, String passWord) {
@@ -29,8 +29,8 @@ public class userConServiceImpl implements userConService {
         us.setUserName(userName);
         us.setPassWord(passWord);
         us.setRole(1);
-        user saveUser = userR.save(us);
-        if(saveUser==null){
+        int saveInt = userR.save(us);
+        if(saveInt!=1){
             throw new contrException(contrEnum.CREATE_USER_ERROR);
         }
     }

@@ -7,9 +7,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import javax.transaction.Transactional;
-import javax.validation.ConstraintViolationException;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author ：yaqiwe
