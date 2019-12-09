@@ -1,4 +1,4 @@
-package com.yaqiwe.socket_chat.entity;
+package socket_chat.entity;
 
 import lombok.Data;
 

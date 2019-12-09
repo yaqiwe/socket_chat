@@ -1,4 +1,4 @@
-package com.yaqiwe.socket_chat.Mapper;
+package socket_chat.Mapper;
 
 
 import com.yaqiwe.socket_chat.entity.user;
