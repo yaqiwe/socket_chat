@@ -26,7 +26,6 @@ import java.util.concurrent.CopyOnWriteArraySet;
  * @description：
  */
 @Service
-@Validated
 public class SenMessageServiceImpl implements senMessageService {
 
     @Override
