@@ -1,14 +1,13 @@
 package com.yaqiwe.socket_chat.Mapper;
 
 import com.yaqiwe.socket_chat.SocketChatApplicationTests;
+import com.yaqiwe.socket_chat.dto.hailFellowDto;
+import com.yaqiwe.socket_chat.entity.hailFellow;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import socket_chat.Mapper.hailFellowMapper;
-import socket_chat.entity.hailFellow;
-import socket_chat.entity.hailFellowDto;
 
 import java.util.List;
 
